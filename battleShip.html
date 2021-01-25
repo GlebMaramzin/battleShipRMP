@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Морской бой</title>
+</head>
+<body>
+<h1>Игра морской бой</h1>
+	<script>
+var a = Math.floor(Math.random() * 5);
+var b = location1 + 1;
+var c = location2 + 1;
+
+var guess;
+var k = 0;
+var s = 0;
+var s1 = false;
+
+while (!s1) {
+    guess = prompt("Огонь! (значение от 0-6):");
+    if (guess < 0 || guess > 6) {
+        alert("Некорректное значение!");
+    } else {
+        s += 1;
+
+        if (guess == a || guess == b || guess == c) {
+            alert("Попадание!");
+            k += 1;
+            if (k == 3) {
+                isSunk = true;
+                alert("Потопил");
+            }
+        } else {
+            alert("Промах");
+        }
+    }
+}
+	</script>
+</body>
+</html> 
